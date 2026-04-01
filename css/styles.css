@@ -443,6 +443,100 @@ nav.scrolled {
 }
 
 /* =============================================
+   TABS SECTION
+   ============================================= */
+.tabs-section {
+  background: var(--off-white);
+}
+.tabs-nav {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 var(--pad-x);
+  background: var(--off-white);
+}
+.tab-btn {
+  position: relative;
+  padding: 20px 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: var(--blue-sky);
+  transform: scaleX(0);
+  transition: transform 0.25s var(--ease);
+}
+.tab-btn.active { color: var(--blue-sky); }
+.tab-btn.active::after { transform: scaleX(1); }
+.tab-btn:hover:not(.active) { color: var(--black); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.tab-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+.tab-text {
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tab-title {
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 200;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+.tab-body {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--gray-dark);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.tab-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tab-list li {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray-dark);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.4;
+}
+.tab-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blue-sky);
+  font-weight: 700;
+}
+.tab-image {
+  background: #ccc center/cover no-repeat;
+}
+.tab-image-dev { background-image: url('../images/Amenity-Lobby.jpg'); }
+.tab-image-inv { background-image: url('../images/galery_hype4.jpg'); }
+
+/* =============================================
    AUDIENCES
    ============================================= */
 .audiences {
@@ -983,6 +1077,8 @@ footer {
   .section-header { grid-template-columns: 1fr; gap: 16px; }
   .services-grid { grid-template-columns: 1fr; }
   .audiences { grid-template-columns: 1fr; }
+  .tab-inner { grid-template-columns: 1fr; }
+  .tab-image { min-height: 260px; order: -1; }
   .split { grid-template-columns: 1fr; }
   .split.reverse .split-image, .split.reverse .split-text { order: unset; }
   .split-image { min-height: 300px; }
