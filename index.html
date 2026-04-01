@@ -338,36 +338,27 @@
   ============================================= -->
   <section class="clients" id="clientes">
     <p class="clients-label">Trabajamos con quienes construyen lo mejor</p>
-    <div class="clients-grid">
-      <div class="client-item rv">
-        <span class="client-name">Ayres</span>
-      </div>
-      <div class="client-item rv rv2">
-        <span class="client-name">Argencons</span>
-      </div>
-      <div class="client-item rv rv3">
-        <span class="client-name">Izrastzoff</span>
-      </div>
-      <div class="client-item rv rv4">
-        <span class="client-name">Arrambide</span>
-      </div>
-      <div class="client-item rv rv5">
-        <span class="client-name">Abrazia</span>
-      </div>
-      <div class="client-item rv">
-        <span class="client-name">GES</span>
-      </div>
-      <div class="client-item rv rv2">
-        <span class="client-name">La Nación</span>
-      </div>
-      <div class="client-item rv rv3">
-        <span class="client-name">Toyota</span>
-      </div>
-      <div class="client-item rv rv4">
-        <span class="client-name">Nestlé</span>
-      </div>
-      <div class="client-item rv rv5">
-        <span class="client-name">Sony</span>
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <img src="images/clientes/Abrazia-logo-white.png" alt="Abrazia" />
+        <img src="images/clientes/Argencons_logo-final_blanco.png" alt="Argencons" />
+        <img src="images/clientes/Ayres-Desarrollos.png" alt="Ayres" />
+        <img src="images/clientes/GES-logo_n.png" alt="GES" />
+        <img src="images/clientes/Izrastzoff-blanco.png" alt="Izrastzoff" />
+        <img src="images/clientes/la-nacion-blanco.webp" alt="La Nación" />
+        <img src="images/clientes/nestle-white.svg" alt="Nestlé" />
+        <img src="images/clientes/sony.png" alt="Sony" />
+        <img src="images/clientes/toyota.png" alt="Toyota" />
+        <!-- duplicado para loop infinito -->
+        <img src="images/clientes/Abrazia-logo-white.png" alt="Abrazia" />
+        <img src="images/clientes/Argencons_logo-final_blanco.png" alt="Argencons" />
+        <img src="images/clientes/Ayres-Desarrollos.png" alt="Ayres" />
+        <img src="images/clientes/GES-logo_n.png" alt="GES" />
+        <img src="images/clientes/Izrastzoff-blanco.png" alt="Izrastzoff" />
+        <img src="images/clientes/la-nacion-blanco.webp" alt="La Nación" />
+        <img src="images/clientes/nestle-white.svg" alt="Nestlé" />
+        <img src="images/clientes/sony.png" alt="Sony" />
+        <img src="images/clientes/toyota.png" alt="Toyota" />
       </div>
     </div>
   </section>
@@ -387,7 +378,7 @@
       </p>
       <div class="cta-btns">
         <a href="https://wa.me/5491132307484" class="btn-wh" target="_blank">Escribinos por WhatsApp</a>
-        <a href="mailto:hola@fab.com.ar" class="btn-cta-ghost">Enviarnos un mail</a>
+        <button id="btn-open-modal" class="btn-cta-ghost">Envianos un mensaje</button>
       </div>
     </div>
   </section>
@@ -403,10 +394,50 @@
     <div class="footer-contact">
       <p>© 2026 FAB. Todos los derechos reservados.</p>
     </div>
-    <div class="footer-right">
-      <p><a href="tel:+5491132307484">+54 9 11 3230-7484</a></p>
-    </div>
+    <div class="footer-right"></div>
   </footer>
+
+  <!-- =============================================
+       MODAL CONTACTO
+  ============================================= -->
+  <div id="modal-contacto" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <h3 class="modal-title" id="modal-heading">Envianos un mensaje</h3>
+      <form id="form-contacto" novalidate>
+        <div class="form-group">
+          <label for="fc-nombre">Nombre y apellido</label>
+          <input type="text" id="fc-nombre" name="nombre" placeholder="Tu nombre completo" autocomplete="name" />
+          <span class="form-error">Este campo es obligatorio.</span>
+        </div>
+        <div class="form-group">
+          <label for="fc-tel">Teléfono</label>
+          <input type="tel" id="fc-tel" name="telefono" placeholder="+54 9 11 XXXX-XXXX" autocomplete="tel" />
+          <span class="form-error">Ingresá un teléfono válido (mínimo 7 dígitos).</span>
+        </div>
+        <div class="form-group">
+          <label for="fc-email">Email</label>
+          <input type="email" id="fc-email" name="email" placeholder="tu@email.com" autocomplete="email" />
+          <span class="form-error">Ingresá un email válido.</span>
+        </div>
+        <div class="form-group">
+          <label for="fc-tipo">Soy...</label>
+          <select id="fc-tipo" name="tipo">
+            <option value="">Seleccioná una opción</option>
+            <option value="desarrollador">Desarrollador</option>
+            <option value="inversor">Inversor</option>
+          </select>
+          <span class="form-error">Seleccioná una opción.</span>
+        </div>
+        <div class="form-group">
+          <label for="fc-mensaje">Mensaje</label>
+          <textarea id="fc-mensaje" name="mensaje" rows="4" placeholder="Contanos sobre tu proyecto o consulta..."></textarea>
+          <span class="form-error">El mensaje debe tener al menos 10 caracteres.</span>
+        </div>
+        <button type="submit" class="btn-submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
