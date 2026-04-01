@@ -1070,6 +1070,8 @@ footer {
   body { cursor: auto; }
   #cursor, #cursor-ring { display: none; }
   .nav-links { display: none; }
+  .hero { min-height: 100svh; }
+  .hero-bg { background-position: center top; background-size: cover; }
   .hero h1 { font-size: 44px; }
   .hero-btns { flex-direction: column; }
   .btn-wh, .btn-ghost-wh { text-align: center; }
