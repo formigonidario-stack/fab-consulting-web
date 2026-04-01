@@ -210,6 +210,7 @@ nav.scrolled {
   font-weight: 200;
   line-height: 0.96;
   letter-spacing: -0.02em;
+  color: var(--white);
   margin-bottom: 20px;
   animation: fadeUp 0.9s var(--ease) 0.7s both;
 }
